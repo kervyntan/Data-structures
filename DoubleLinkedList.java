@@ -61,6 +61,8 @@ public class DoubleLinkedList {
 		firstNode.next = head; // sets a pointer; new Node's next points to head
 
 		head = firstNode; // assign beginning of list to new node
+		
+		length++;
 
 	}
 
@@ -78,6 +80,8 @@ public class DoubleLinkedList {
 		}
 		
 		tail = lastNode;
+		
+		length++;
 
 	}
 	
@@ -88,6 +92,8 @@ public class DoubleLinkedList {
 		head = head.next;
 		
 		current = null;
+		
+		length--;
 		
 	}
 
