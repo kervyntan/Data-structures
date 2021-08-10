@@ -34,7 +34,7 @@ public class Stack {
 	public void push (int data) {
 		ListNode temp = new ListNode(data);
 		
-		temp.next = top;
+		temp.next = top; // Points to the node below it / null if stack is empty (since stack is LIFO)
 		
 		top = temp; // Assign the value of temp to top
 		
