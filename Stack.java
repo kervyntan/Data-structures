@@ -36,7 +36,7 @@ public class Stack {
 		
 		temp.next = top;
 		
-		top = temp;
+		top = temp; // Assign the value of temp to top
 		
 		length++;
 		
