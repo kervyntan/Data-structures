@@ -71,6 +71,21 @@ public class BinaryTree {
 		}
 		
 	}
+	
+	public void recursiveInOrder (TreeNode root) {
+		// Visit processes the value of the node itself
+		
+		if (root == null) {
+			return;
+		}
+		// Passing root = root.left 
+		recursiveInOrder(root.left);
+		System.out.print(root.data + " ");
+		// Passing root = root.right
+		recursiveInOrder(root.right);
+		
+	} // The value is processed off the stack only at the end of the block of code
+
 
 	public static void main(String[] args) {
 		BinaryTree tree = new BinaryTree();
