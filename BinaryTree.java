@@ -159,6 +159,53 @@ public class BinaryTree {
 		}
 
 	}
+	
+	
+	public void levelOrderTraversal(TreeNode root) {
+		// Queue is a FIFO data structure (First In First Out)
+		// Enter from one side, exits through the next
+		if (root == null) {
+			return;
+		}
+
+		Queue<TreeNode> queue = new LinkedList<>();
+		queue.offer(root);
+
+		while (!queue.isEmpty()) {
+			TreeNode temp = queue.poll();
+
+			System.out.print(temp.data + " ");
+
+			if (temp.left != null) {
+				queue.offer(temp.left);
+			}
+
+			if (temp.right != null) {
+				queue.offer(temp.right);
+			}
+		}
+
+	}
+	
+		public int findMax (TreeNode root) {
+		if (root == null) { // Base Case
+			return Integer.MIN_VALUE;
+		}
+		
+		int answer = root.data;
+		int leftRoot = findMax(root.left);
+		int rightRoot = findMax(root.right);
+		
+		if (leftRoot > answer) {
+			answer = leftRoot;
+		} 
+		
+		if (rightRoot > answer) {
+			answer = rightRoot;
+		}
+		
+		return answer;
+	}
 
 	public static void main(String[] args) {
 		BinaryTree tree = new BinaryTree();
