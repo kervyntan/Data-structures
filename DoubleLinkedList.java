@@ -96,6 +96,38 @@ public class DoubleLinkedList {
 		length--;
 		
 	}
+	
+	public boolean checkPalindrome(ListNode head, ListNode tail, int length) {
+		ListNode start = head;
+		ListNode end = tail;
+
+		if (length % 2 == 0) {
+			
+			while (head != tail.next) {
+				
+				if (head.data != tail.data) {
+					return false;
+				}
+				
+				head = head.next;
+				tail = tail.previous; // two pointers for doubly linked lists
+			}
+			
+		} else if (length % 2 != 0) {
+			
+			while (head != tail) {
+				
+				if (head.data != tail.data) {
+					return false;
+				}
+				
+				head = head.next;
+				tail = tail.previous;
+			}
+		}
+		
+		return true;
+	}
 
 	public static void main(String[] args) {
 		DoubleLinkedList dll = new DoubleLinkedList();
@@ -109,10 +141,17 @@ public class DoubleLinkedList {
 		second.next = third;
 		third.next = tail;
 		tail.next = null;
-
 		
-		dll.deleteFirstNode();
+		tail.previous = third; // must include for doubly-linked list (two pointers)
+		third.previous = second;
+		second.previous = dll.head;
+		
+		boolean result = dll.checkPalindrome(dll.head, tail, 4);
+		
+		System.out.println(result);
+		
 		dll.display();
+
 
 	}
 
