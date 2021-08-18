@@ -180,6 +180,23 @@ public class SinglyLinkedList {
 		
 		return middleNode;
 	}
+	
+	public boolean recursiveSearch(ListNode head, int searchKey) {
+		// base case
+
+		if (head == null) { // eventually they'll reach this base case
+			return false;
+		}
+
+		if (head.data == searchKey) {
+			return true;
+		}
+
+		return recursiveSearch(head.next, searchKey); // head = head.next (traversing list)
+		// return the final value once it reaches the last call in the stack (whether is true/false)
+		// avoid the need to loop printing using Sysout 
+
+	}
 
 	public static void main(String[] args) {
 		SinglyLinkedList sll = new SinglyLinkedList(); // object declaration
