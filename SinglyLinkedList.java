@@ -18,7 +18,7 @@ public class SinglyLinkedList {
 	public void display(ListNode head) {
 		
 		ListNode current = head;
-		while (current != null) {
+		while (current != null) { // 
 			System.out.print(current.data + " -- >"); // data stores the value of int passed through current
 			current = current.next;
 		}
@@ -28,7 +28,7 @@ public class SinglyLinkedList {
 	public int length() {
 		ListNode current = head;
 		int count = 0;
-
+3
 		while (current != null) {
 			count++;
 			current = current.next;
@@ -171,6 +171,9 @@ public class SinglyLinkedList {
 		ListNode traverser = head;
 		
 		while (traverser != null & traverser.next != null) {
+			
+		// traverser.next checks if traverser has reached the end, and hence 
+		// should point to null
 		      middleNode = middleNode.next;
 		      traverser = traverser.next.next;
 		}
