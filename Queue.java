@@ -61,6 +61,7 @@ public class Queue {
 
 		if (front == null) {
 			// Both front and rear must point to null to break the links to the last node
+			// if removing the node leads to an empty queue
 			rear = null;
 		}
 
